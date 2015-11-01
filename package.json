@@ -1,5 +1,5 @@
 {
-  "name": "Maveli",
+  "name": "Mavenli",
   "version": "0.0.1",
   "description": "Better experiences while traveling",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "url": "https://tbd.com"
   },
   "keywords": [
-    "Maveli",
+    "Mavenli",
     "Travel",
     "Activity"
   ],

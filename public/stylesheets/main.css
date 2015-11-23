@@ -2,10 +2,11 @@
   background: url(../images/backgrounds/CityHall.png);
   background-repeat: no-repeat;
   background-color: inherit;
-  background-position:center;
-  background-size:cover;
-  color: white;
-  padding-bottom: 200px; }
+  background-position: top;
+  background-size: cover;
+  color: white;}
+  .jumbotron .search-bar{
+    padding-top: 150px;  }
   .jumbotron .btn-primary {
     background: #845ac7;
     border-color: #845ac7; }

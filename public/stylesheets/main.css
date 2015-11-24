@@ -8,10 +8,12 @@
   .jumbotron .search-bar{
     padding-top: 150px;  }
   .jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7; }
+    background: #00dd63;
+    border-color: #00dd63;
+    font-weight: bold;}
     .jumbotron .btn-primary:hover {
-      background: #7646c1; }
+      background: #00dd63;
+     }
   .jumbotron p {
     color: #FFFFFF;
     max-width: 75%;

@@ -1,21 +1,30 @@
 {
   "name": "Mavenli",
   "version": "0.0.1",
-  "description": "Better experiences while traveling",
+  "description": "Better Traveling Experiences",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+    "angular": "*",
     "ejs": "2.3.3",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "googleapis": "*",
+    "mandrill-api": "1.0.37",
+    "mongoose": "3.8.0",
+    "mongodb": "*",
+    "twilio": "1.1.4",
+    "validator": "2.0.0",
+    "bootstrap": "*",
+    "angular-ui-bootstrap": "*"
   },
   "engines": {
     "node": "0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://tbd.com"
+    "url": "https://mavenli.herokuapp.com"
   },
   "keywords": [
     "Mavenli",

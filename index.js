@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 
 
 /* REST routes for User CRUD Service */
+app.get("/api/activities", activity.getAllActivities);
 
 /*
 app.get('/', function(request, response) {

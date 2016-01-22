@@ -1,0 +1,38 @@
+[
+  {
+    "city": "San Francisco",
+    "state": "California",
+    "image": "../images/comingsoon.png",
+    "link": "https://en.wikipedia.org/wiki/San_Francisco"
+  },
+  {
+    "city": "Los Angeles",
+    "state": "California",
+    "image": "../images/comingsoon.png",
+    "link": "https://en.wikipedia.org/wiki/Los_Angeles"
+  },
+  {
+    "city": "San Diego",
+    "state": "California",
+    "image": "../images/comingsoon.png",
+    "link": "https://en.wikipedia.org/wiki/San_Diego"
+  },
+  {
+    "city": "Napa/Sonoma",
+    "state": "California",
+    "image": "../images/comingsoon.png",
+    "link": "#"
+  },
+  {
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "image": "../images/comingsoon.png",
+    "link": "#"
+  },
+  {
+    "city": "New York City",
+    "state": "New York",
+    "image": "../images/comingsoon.png",
+    "link": "#"
+  }
+]

@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://cse112json:jsonisbetter@paulo.mongohq.com:10004/app19653281');
 
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
                 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };
@@ -17,7 +16,7 @@ db.once('open', function callback ()
     console.log("Mongodb started " + new Date());
 });
 
-//Define the schema for our appointment database
+//Define the schema for our activites
 var ActivitiesSchema =
 {
     name: String

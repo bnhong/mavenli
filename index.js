@@ -1,5 +1,5 @@
 var express  = require('express'),
-    activity = require('./services/activity');
+    activity = require('./services/database');
 
 var app = express();
 app.set('port', (process.env.PORT || 5000));

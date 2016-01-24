@@ -34,36 +34,36 @@ var ProvidersSchema =
 var UserSchema =
 {
   userID              : String,
-  Name                : String,
-  Address             : String,
-  PhoneNumber         : Number,
-  Email               : String,
-  Bio                 : String,
-  ReservationList     : [],
-  ReviewsList         : [],
-  PricePref           : Number,
-  AdventurePref       : Number,
-  PastActivities      : [],
+  name                : String,
+  address             : String,
+  phoneNumber         : Number,
+  email               : String,
+  bio                 : String,
+  reservationList     : [],
+  reviewsList         : [],
+  pricePrefence       : Number,
+  adventurePrefence   : Number,
+  pastActivities      : [],
 };
 
 var ActivitiesSchema =
 {
-  ProviderID          : String,
-  ActivityID          : String,
-  StartLocation       : String,
-  DescriptionTagsList : [],
-  Title               : String,
-  Description         : String,
-  Duration            : Date,
-  DestinationList     : [],
-  TransportIncluded   : Boolean,
-  FoodIncluded        : Boolean,
-  LodgingIncluded     : Boolean,
-  TicketsIncluded     : Boolean,
-  EquipmentIncluded   : Boolean,
-  Price               : Number,
-  PricePointScore     : Number,
-  AdventurePointScore : Number,
+  providerID          : String,
+  activityID          : String,
+  location            : String,
+  descriptionTagsList : [],
+  title               : String,
+  description         : String,
+  duration            : Date,
+  destinationList     : [],
+  transportIncluded   : Boolean,
+  foodIncluded        : Boolean,
+  lodgingIncluded     : Boolean,
+  ticketsIncluded     : Boolean,
+  equipmentIncluded   : Boolean,
+  price               : Number,
+  pricePointScore     : Number,
+  adventurePointScore : Number,
 };
 
 var DestinationSchema =
@@ -80,6 +80,7 @@ var ReservationSchema =
   activityID    : String,
   startTime     : Date,
   bookedPrice   : Number,
+  completed     : Boolean,
 };
 
 var ReviewSchema =
@@ -104,15 +105,12 @@ var ReservationDB = mongoose.model('ReservationDB', mongoose.Schema(ReservationS
 
 var ReviewDB = mongoose.model('ReviewDB', mongoose.Schema(ReviewSchema));
 
-
-exports.getAllActivities = function(req, res)
+// Activities
+exports.getAllActivitiesByLocation = function(req, res)
 {
-  /*  console.log("db create");
-  var act = new ActivitiesDB({ name: 'summer'});
-  act.save(); */
-
   console.log("getAllActivies");
-  ActivitiesDB.find({}, function(err, obj)
+  console.log(req.params.location);
+  ActivitiesDB.find({ location: req.params.location }, function(err, obj)
   {
     res.json(obj);
   });

@@ -12,21 +12,21 @@ app.set('view engine', 'ejs');
 
 
 /* REST routes for User CRUD Service */
-app.get("/api/activities", activity.getAllActivities);
+//Activities
+app.get("/api/activities/:location", activity.getAllActivitiesByLocation);
 
 /*
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
-app.get('/partner', function(request, response ) {
-  response.render('pages/partner');
-});
-app.get('/howitworks', function(request, response) {
-  response.render('pages/howitworks')
-});
-app.get('/userlogin', function(request, response) {
-  response.render('pages/userlogin')
-});
+//User
+app.get("/api/user/:id", )
+
+//Partners
+app.get("/api/partners/:id", )
+
+//Reviews
+app.get("/api/reviews/:id", )
+
+//Reservations
+app.get("/api/reservations/:id", )
 */
 
 app.get("/", function(request, response) {

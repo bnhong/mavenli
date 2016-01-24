@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 /* REST routes for User CRUD Service */
 //Activities
-app.get("/api/activities/:location", activity.getAllActivitiesByLocation);
+app.get("/api/activities/location/:location", activity.getAllActivitiesByLocation);
 
 /*
 //User

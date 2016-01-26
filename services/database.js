@@ -43,11 +43,12 @@ var UserSchema =
   reviewsList         : [],
   pricePrefence       : Number,
   adventurePrefence   : Number,
-  pastActivities      : [],
+  pastActivitiesList  : [],
 };
 
 var ActivitiesSchema =
 {
+  activityID          : String,
   providerID          : String,
   activityID          : String,
   location            : String,
@@ -64,17 +65,12 @@ var ActivitiesSchema =
   price               : Number,
   pricePointScore     : Number,
   adventurePointScore : Number,
-};
-
-var DestinationSchema =
-{
-  destinationID : String,
-  name          : String,
-  address       : String
+  destinationList     : [],
 };
 
 var ReservationSchema =
 {
+  reservationID : String,
   providerID    : String,
   userID        : String,
   activityID    : String,
@@ -99,18 +95,62 @@ var UserDB = mongoose.model('UserDB', mongoose.Schema(UserSchema));
 
 var ActivitiesDB = mongoose.model('ActvitiesDB', mongoose.Schema(ActivitiesSchema));
 
-var DestinationDB = mongoose.model('DestinationDB', mongoose.Schema(DestinationSchema));
+var ReservationsDB = mongoose.model('ReservationsDB', mongoose.Schema(ReservationSchema));
 
-var ReservationDB = mongoose.model('ReservationDB', mongoose.Schema(ReservationSchema));
-
-var ReviewDB = mongoose.model('ReviewDB', mongoose.Schema(ReviewSchema));
+var ReviewsDB = mongoose.model('ReviewsDB', mongoose.Schema(ReviewSchema));
 
 // Activities
 exports.getAllActivitiesByLocation = function(req, res)
 {
-  console.log("getAllActivies");
-  console.log(req.params.location);
   ActivitiesDB.find({ location: req.params.location }, function(err, obj)
+  {
+    res.json(obj);
+  });
+};
+
+// Providers
+exports.createProvider = function(req, res)
+{
+  var provider = new ProvidersDB(req.body);
+  provider.save();
+  res.json(req.body);
+};
+
+exports.deleteProvider = function(req, res)
+{
+  ProvidersDB.remove({providerID: req.params.providerID}, function(err)
+  {
+      res.json(true);
+  });
+};
+
+exports.getProvider = function(req, res)
+{
+  ProvidersDB.find({ providerID: req.params.providerID }, function(err, obj)
+  {
+    res.json(obj);
+  });
+};
+
+// Reservations
+exports.createReservation = function(req, res)
+{
+  var reservation = new ReservationDB(req.body);
+  reservation.save();
+  res.json(req.body);
+};
+
+exports.deleteReservation = function(req, res)
+{
+  ReservationDB.remove({reservationID: req.params.reservationId}, function(err)
+  {
+      res.json(true);
+  });
+};
+
+exports.getReservation = function(req, res)
+{
+  ActivitiesDB.find({ reservationID: req.params.reservationID }, function(err, obj)
   {
     res.json(obj);
   });

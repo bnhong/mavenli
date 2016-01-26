@@ -1,5 +1,5 @@
 var express  = require('express'),
-    activity = require('./services/database');
+    database = require('./services/database');
 
 var app = express();
 app.set('port', (process.env.PORT || 5000));
@@ -12,26 +12,24 @@ app.set('view engine', 'ejs');
 
 
 /* REST routes for User CRUD Service */
+
 //Activities
-app.get("/api/activities/location/:location", activity.getAllActivitiesByLocation);
+app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
 
-/*
-//User
-app.get("/api/user/:id", )
-
-//Partners
-app.get("/api/partners/:id", )
-
-//Reviews
-app.get("/api/reviews/:id", )
+//Provdiers
+app.post("/api/partners/:providerID", database.createProvider);
+app.delete("/api/partners/:providerID", database.deleteProvider);
+app.get("/api/partners/:providerID", database.getProvider);
 
 //Reservations
-app.get("/api/reservations/:id", )
-*/
+app.get("/api/reviews/:reservationID", database.getReservation);
+
 
 app.get("/", function(request, response) {
   response.render('pages/index');
 });
+
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

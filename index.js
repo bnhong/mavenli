@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
 
 //Provdiers
-app.post("/api/partners/:providerID", database.createProvider);
+app.post("/api/partners", database.createProvider);
 app.delete("/api/partners/:providerID", database.deleteProvider);
 app.get("/api/partners/:providerID", database.getProvider);
 

@@ -108,6 +108,14 @@ exports.getAllActivitiesByLocation = function(req, res)
   });
 };
 
+exports.getAllActivitiesTst = function(req, res)
+{
+  ActivitiesDB.find({}, function(err, obj)
+  {
+    res.json(obj);
+  });
+};
+
 // Providers
 exports.createProvider = function(req, res)
 {
@@ -127,6 +135,14 @@ exports.deleteProvider = function(req, res)
 exports.getProvider = function(req, res)
 {
   ProvidersDB.find({ providerID: req.params.providerID }, function(err, obj)
+  {
+    res.json(obj);
+  });
+};
+
+exports.getAllProviderTst = function(req, res)
+{
+  ProvidersDB.find({}, function(err, obj)
   {
     res.json(obj);
   });

@@ -17,7 +17,8 @@
     "twilio": "1.1.4",
     "validator": "2.0.0",
     "bootstrap": "*",
-    "angular-ui-bootstrap": "*"
+    "angular-ui-bootstrap": "*",
+    "body-parser": "*"
   },
   "engines": {
     "node": "0.12.7"

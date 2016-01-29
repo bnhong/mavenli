@@ -1,7 +1,10 @@
-var express  = require('express'),
-    database = require('./services/database');
+var express    = require('express'),
+    database   = require('./services/database')
+    bodyParser = require('body-parser');
 
 var app = express();
+var jsonParser = bodyParser.json();
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -15,7 +18,7 @@ app.set('view engine', 'ejs');
 app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
 
 //Provdiers
-app.post("/api/partners", database.createProvider);
+app.post("/api/partners", jsonParser, database.createProvider);
 app.delete("/api/partners/:providerID", database.deleteProvider);
 app.get("/api/partners/:providerID", database.getProvider);
 
@@ -26,7 +29,7 @@ app.get("/api/reservations/:reservationID", database.getReservation);
 
 //Test
 app.get("/api/test/activities", database.getAllActivitiesTst);
-app.get("/app/test/partners", database.getAllProviderTst);
+app.get("/api/test/partners", database.getAllProviderTst);
 
 /* Default Routing */
 app.get("/", function(request, response) {

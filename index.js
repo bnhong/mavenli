@@ -15,6 +15,8 @@ app.set('view engine', 'ejs');
 
 /* REST routes for User CRUD Service */
 //Activities
+app.post("/api/activities", jsonParser, database.createActivity);
+app.delete("/api/activities/:activityID", database.deleteActivity);
 app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
 
 //Provdiers

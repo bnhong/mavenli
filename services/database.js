@@ -100,6 +100,21 @@ var ReservationsDB = mongoose.model('ReservationsDB', mongoose.Schema(Reservatio
 var ReviewsDB = mongoose.model('ReviewsDB', mongoose.Schema(ReviewSchema));
 
 // Activities
+exports.createActivity = function(req, res)
+{
+  var activity = new ActivitiesDB(req.body);
+  activity.save();
+  res.json(req.body);
+};
+
+exports.deleteActivity = function(req, res)
+{
+  ActivitiesDB.remove({activityID: req.params.activityID}, function(err)
+  {
+      res.json(true);
+  });
+};
+
 exports.getAllActivitiesByLocation = function(req, res)
 {
   ActivitiesDB.find({ location: req.params.location }, function(err, obj)

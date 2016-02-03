@@ -115,6 +115,35 @@ exports.deleteActivity = function(req, res)
   });
 };
 
+exports.updateActivity = function(req, res)
+{
+    ActivitiesDB.findByIdAndUpdate(req.params.activityID,
+    {
+        $set:
+        {
+            providerID          : req.body.providerID,
+            name                : req.body.name,
+            address             : req.body.address,
+            phoneNumber         : req.body.phoneNumber,
+            email               : req.body.email,
+            bio                 : req.body.bio,
+            password            : req.body.password,
+            currentlyWorking    : req.body.currentlyWorking,
+            rating              : req.body.rating,
+            reviewsList         : req.body.reviewsList.slice(),
+            pastActivitiesList  : req.body.pastActivitiesList.slice(),
+        }
+    },
+    {
+        upsert: true
+    },
+
+    function(err, obj)
+    {
+        return res.json(true);
+    });
+};
+
 exports.getAllActivitiesByLocation = function(req, res)
 {
   ActivitiesDB.find({ location: req.params.location }, function(err, obj)
@@ -137,6 +166,42 @@ exports.createProvider = function(req, res)
   var provider = new ProvidersDB(req.body);
   provider.save();
   res.json(req.body);
+};
+
+exports.updateProvider = function(req, res)
+{
+    ProvidersDB.findByIdAndUpdate(req.params.providerID,
+    {
+        $set:
+        {
+            activityID          : req.body.activityID,
+            providerID          : req.body.providerID,
+            activityID          : req.body.activityID,
+            location            : req.body.location,
+            descriptionTagsList : req.body.descriptionTagsList.slice(),
+            title               : req.body.title,
+            description         : req.body.description,
+            duration            : req.body.duration,
+            destinationList     : req.body.destinationList.slice(),
+            transportIncluded   : req.body.transportIncluded,
+            foodIncluded        : req.body.foodIncluded,
+            lodgingIncluded     : req.body.lodgingIncluded,
+            ticketsIncluded     : req.body.ticketsIncluded,
+            equipmentIncluded   : req.body.equipmentIncluded,
+            price               : req.body.price,
+            pricePointScore     : req.body.pricePointScore,
+            adventurePointScore : req.body.adventurePointScore,
+            destinationList     : req.body.destinationList.slice()
+        }
+    },
+    {
+        upsert: true
+    },
+
+    function(err, obj)
+    {
+        return res.json(true);
+    });
 };
 
 exports.deleteProvider = function(req, res)
@@ -169,6 +234,31 @@ exports.createReservation = function(req, res)
   var reservation = new ReservationDB(req.body);
   reservation.save();
   res.json(req.body);
+};
+
+exports.updateReservation = function(req, res)
+{
+    ReservationDB.findByIdAndUpdate(req.params.reservationId,
+    {
+        $set:
+        {
+            reservationID : req.body.reservationId,
+            providerID    : req.body.providerID,
+            userID        : req.body.userID,
+            activityID    : req.body.activityID,
+            startTime     : req.body.startTime,
+            bookedPrice   : req.body.bookedPrice,
+            completed     : req.body.completed
+        }
+    },
+    {
+        upsert: true
+    },
+
+    function(err, obj)
+    {
+        return res.json(true);
+    });
 };
 
 exports.deleteReservation = function(req, res)

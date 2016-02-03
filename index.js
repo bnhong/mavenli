@@ -16,16 +16,19 @@ app.set('view engine', 'ejs');
 /* REST routes for User CRUD Service */
 //Activities
 app.post("/api/activities", jsonParser, database.createActivity);
+app.put("/api/activities/:id", jsonParser, database.updateActivity);
 app.delete("/api/activities/:activityID", database.deleteActivity);
 app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
 
 //Provdiers
 app.post("/api/partners", jsonParser, database.createProvider);
+app.put("/api/partners/:providerID", jsonParser, database.updateProvider);
 app.delete("/api/partners/:providerID", database.deleteProvider);
 app.get("/api/partners/:providerID", database.getProvider);
 
 //Reservations
 app.post("/api/reservations", database.createReservation);
+app.put("/api/reservations/:reservationID", jsonParser, database.updateReservation);
 app.delete("/api/reservations/:reservationID", database.deleteReservation);
 app.get("/api/reservations/:reservationID", database.getReservation);
 

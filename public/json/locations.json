@@ -1,38 +1,44 @@
 [
   {
+    "locationID": "10000001",
     "city": "San Francisco",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "https://en.wikipedia.org/wiki/San_Francisco"
+    "link": "http://localhost:5000/activities.html#/San%20Francisco"
   },
   {
+    "locationID": "10000002",
     "city": "Los Angeles",
     "state": "California",
     "image": "../images/comingsoon.png",
     "link": "https://en.wikipedia.org/wiki/Los_Angeles"
   },
   {
+    "locationID": "10000003",
     "city": "San Diego",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "https://en.wikipedia.org/wiki/San_Diego"
+    "link": "http://localhost:5000/activities.html#/San%20Diego"
   },
   {
+    "locationID": "10000004",
     "city": "Napa/Sonoma",
     "state": "California",
     "image": "../images/comingsoon.png",
     "link": "#"
   },
   {
+    "locationID": "10000005",
     "city": "Las Vegas",
     "state": "Nevada",
     "image": "../images/comingsoon.png",
     "link": "#"
   },
   {
+    "locationID": "10000006",
     "city": "New York City",
     "state": "New York",
     "image": "../images/comingsoon.png",
-    "link": "#"
+    "link": "../templates/pages/cities.ejs"
   }
 ]

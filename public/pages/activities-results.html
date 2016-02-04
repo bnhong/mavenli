@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+        <h3>Results for {{location}}</h3>
+        <p>Book an activity today!</p>
+        <tr ng-repeat="destination in destinations">
+          <td>{{destination.name}}</td>
+          <td>{{destination.location}}</td>
+          <td>
+            <a class="btn btn-primary">Go</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

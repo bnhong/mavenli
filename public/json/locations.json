@@ -4,7 +4,7 @@
     "city": "San Francisco",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "http://localhost:5000/activities.html#/San%20Francisco"
+    "link": "pages/activities.html#/San%20Francisco"
   },
   {
     "locationID": "10000002",
@@ -18,7 +18,7 @@
     "city": "San Diego",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "http://localhost:5000/activities.html#/San%20Diego"
+    "link": "pages/activities.html#/San%20Diego"
   },
   {
     "locationID": "10000004",

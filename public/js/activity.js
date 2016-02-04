@@ -4,7 +4,7 @@ angular.module('activityApp', ['ngRoute'])
 .config(function($routeProvider) {
   $routeProvider
     .when('/:location', {
-      templateUrl: 'pages/activities-results.html',
+      templateUrl: '../pages/activities-results.html',
       controller: 'GetLocationController',
       controllerAs: 'GetLocationCtrl'
     })

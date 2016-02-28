@@ -40,7 +40,7 @@ var UserSchema =
   email               : String,
   bio                 : String,
   reservationList     : [],
-  reviewsList         : [],
+  reviewList         : [],
   pricePrefence       : Number,
   adventurePrefence   : Number,
   pastActivitiesList  : [],
@@ -50,7 +50,6 @@ var ActivitiesSchema =
 {
   activityID          : String,
   providerID          : String,
-  activityID          : String,
   location            : String,
   descriptionTagsList : [],
   title               : String,
@@ -64,8 +63,7 @@ var ActivitiesSchema =
   equipmentIncluded   : Boolean,
   price               : Number,
   pricePointScore     : Number,
-  adventurePointScore : Number,
-  destinationList     : [],
+  adventurePointScore : Number
 };
 
 var ReservationSchema =
@@ -121,17 +119,23 @@ exports.updateActivity = function(req, res)
     {
         $set:
         {
-            providerID          : req.body.providerID,
-            name                : req.body.name,
-            address             : req.body.address,
-            phoneNumber         : req.body.phoneNumber,
-            email               : req.body.email,
-            bio                 : req.body.bio,
-            password            : req.body.password,
-            currentlyWorking    : req.body.currentlyWorking,
-            rating              : req.body.rating,
-            reviewsList         : req.body.reviewsList.slice(),
-            pastActivitiesList  : req.body.pastActivitiesList.slice(),
+          activityID          : req.body.activityID,
+          providerID          : req.body.providerID,
+          location            : req.body.location,
+          descriptionTagsList : req.body.descriptionTagsList.slice(),
+          title               : req.body.title,
+          description         : req.body.description,
+          duration            : req.body.duration,
+          destinationList     : req.body.destinationList.slice(),
+          transportIncluded   : req.body.transportIncluded,
+          foodIncluded        : req.body.foodIncluded,
+          lodgingIncluded     : req.body.lodgingIncluded,
+          ticketsIncluded     : req.body.ticketsIncluded,
+          equipmentIncluded   : req.body.equipmentIncluded,
+          price               : req.body.price,
+          pricePointScore     : req.body.pricePointScore,
+          adventurePointScore : req.body.adventurePointScore,
+          destinationList     : req.body.destinationList.slice()
         }
     },
     {
@@ -174,24 +178,17 @@ exports.updateProvider = function(req, res)
     {
         $set:
         {
-            activityID          : req.body.activityID,
-            providerID          : req.body.providerID,
-            activityID          : req.body.activityID,
-            location            : req.body.location,
-            descriptionTagsList : req.body.descriptionTagsList.slice(),
-            title               : req.body.title,
-            description         : req.body.description,
-            duration            : req.body.duration,
-            destinationList     : req.body.destinationList.slice(),
-            transportIncluded   : req.body.transportIncluded,
-            foodIncluded        : req.body.foodIncluded,
-            lodgingIncluded     : req.body.lodgingIncluded,
-            ticketsIncluded     : req.body.ticketsIncluded,
-            equipmentIncluded   : req.body.equipmentIncluded,
-            price               : req.body.price,
-            pricePointScore     : req.body.pricePointScore,
-            adventurePointScore : req.body.adventurePointScore,
-            destinationList     : req.body.destinationList.slice()
+          providerID          : req.body.providerID,
+          name                : req.body.name,
+          address             : req.body.address,
+          phoneNumber         : req.body.phoneNumber,
+          email               : req.body.email,
+          bio                 : req.body.bio,
+          password            : req.body.password,
+          currentlyWorking    : req.body.currentlyWorking,
+          rating              : req.body.rating,
+          reviewsList         : req.body.reviewsList.slice(),
+          pastActivitiesList  : req.body.pastActivitiesList.slice(),
         }
     },
     {

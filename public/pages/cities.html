@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h1>Other Locations</h1>
+</div>
+
+<div ng-controller="CitiesController">
+  <div class="container">
+    <div class="row">
+      <div ng-repeat="destination in destinations">
+        <div class="col-md-4">
+          <h3>{{destination.city}}</h3>
+          <ul>
+            <a href="{{destination.link}}">
+              <img ng-src="{{destination.image}}" class="img-responsive"  width="400" height="400">
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+    <ul>
+      <button href="#" class="btn btn-lg btn-success btn-block" type="button">See All Destinations!</button>
+    </ul>
+  </div>
+</div>

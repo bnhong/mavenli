@@ -11,6 +11,15 @@ angular.module('activityApp')
       });
   }])
 
+.controller('CitiesController', ['$scope', '$http',
+  function($scope, $http) {
+    $http.get('../json/locations.json')
+      .success(function(data){
+        $scope.destinations = data;
+        console.log($scope.destinations);
+      });
+  }])
+
 .controller('defaultController',
   function($scope) {
     $scope.message = 'Search for activities in your area!';

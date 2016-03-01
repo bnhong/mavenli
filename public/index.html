@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="activityApp">
+<head>
+  <div ng-include src="'/partials/header.html'"></div>
+</head>
+<body>
+  <div ng-include src="'/partials/nav.html'"></div>
+  <div ng-include src="'/partials/jumbotron.html'"></div>
+  <div ng-include src="'/pages/cities.html'"></div>
+  <div ng-view></div>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.js"></script>
+<script type="text/javascript" src="https://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-1.0.0.js"></script>
+
+<script type="text/javascript" src="../js/activity.js"></script>
+<script type="text/javascript" src="../js/controllers/activity-controller.js"></script>
+
+</html>

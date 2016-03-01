@@ -4,9 +4,17 @@
       <table class="table">
         <h3>Results for {{location}}</h3>
         <p>Book an activity today!</p>
+        <tr>
+          <td>Provider</td>
+          <td>Location</td>
+          <td>Title</td>
+          <td>Price</td>
+        </tr>
         <tr ng-repeat="destination in destinations">
-          <td>{{destination.name}}</td>
+          <td>{{destination.providerID}}</td>
           <td>{{destination.location}}</td>
+          <td>{{destination.title}}</td>
+          <td>{{destination.price}}</td>
           <td>
             <a class="btn btn-primary">Go</a>
           </td>

@@ -4,21 +4,21 @@
     "city": "San Francisco",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "../pages/activities.html#/San%20Francisco"
+    "link": "../index.html#/San%20Francisco"
   },
   {
     "locationID": "10000002",
     "city": "Los Angeles",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "https://en.wikipedia.org/wiki/Los_Angeles"
+    "link": "../index.html#/Los%20Angeles"
   },
   {
     "locationID": "10000003",
     "city": "San Diego",
     "state": "California",
     "image": "../images/comingsoon.png",
-    "link": "../pages/activities.html#/San%20Diego"
+    "link": "../index.html#/San%Diego"
   },
   {
     "locationID": "10000004",

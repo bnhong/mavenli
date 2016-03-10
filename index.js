@@ -1,9 +1,15 @@
 var express    = require('express'),
     database   = require('./services/database')
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    jwt        = require('express-jwt');
 
 var app = express();
 var jsonParser = bodyParser.json();
+var jwtCheck = jwt({
+  secret: new Buffer('3NCPPX3z4sf_Cn6kBwelUYbDOWibVKIV25uqJ-Kd1ZPZE5FhO_iLrC092fmqMZe-', 'base64'),
+  audience: 'W2JYTHEJIrMJf0Qaa7XN5Bvk5enH5Bhe'
+});
+
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -33,6 +39,7 @@ app.delete("/api/reservations/:reservationID", database.deleteReservation);
 app.get("/api/reservations/:reservationID", database.getReservation);
 
 //Test
+app.use("/api/test/activities", jwtCheck);
 app.get("/api/test/activities", database.getAllActivitiesTst);
 app.get("/api/test/partners", database.getAllProviderTst);
 

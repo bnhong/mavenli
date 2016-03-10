@@ -8,17 +8,23 @@
   },
   "dependencies": {
     "angular": "*",
+    "angular-ui-bootstrap": "*",
+    "body-parser": "*",
+    "bootstrap": "*",
     "ejs": "2.3.3",
     "express": "4.13.3",
+    "express-jwt": "^3.3.0",
+    "express-session": "^1.13.0",
     "googleapis": "*",
+    "install": "^0.4.4",
+    "kerberos": "0.0.18",
     "mandrill-api": "1.0.37",
+    "mongodb": "^2.1.7",
     "mongoose": "4.3.6",
-    "mongodb": "*",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.5.1",
     "twilio": "1.1.4",
-    "validator": "2.0.0",
-    "bootstrap": "*",
-    "angular-ui-bootstrap": "*",
-    "body-parser": "*"
+    "validator": "2.0.0"
   },
   "engines": {
     "node": "0.12.7"

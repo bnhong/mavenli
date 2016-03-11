@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="mainApp">
 <head>
-    <div ng-include src="'/partials/header.html'"></div>
+    <title>Mavenli</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 </head>
 <body>
     <div ng-include src="'../partials/nav.html'"></div>
-    <div ng-include src="'../partials/jumbotron.html'"></div>
-    <div ng-include src="'../partials/cities.html'"></div>
     <div ui-view></div>
 </body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 <script type="text/javascript" src="https://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-1.0.0.js"></script>
 
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/activity.js"></script>
-<script type="text/javascript" src="../js/controllers/activity-controller.js"></script>
+<!-- The app.js file contains route definitions and configuration. -->
+<script type="text/javascript" src="../app/app.js"></script>
+
+<!-- Home application -->
+<script type="text/javascript" src="../app/home/controllers/CitiesCtrl.js"></script>
+<script type="text/javascript" src="../app/home/controllers/GetLocationCtrl.js"></script>
+<script type="text/javascript" src="../app/home/controllers/RsvpFormCtrl.js"></script>
+
+<!-- Activities application -->
+
+<!-- Providers application -->
 
 </html>

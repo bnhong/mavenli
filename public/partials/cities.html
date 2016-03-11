@@ -9,7 +9,7 @@
         <div class="col-md-4">
           <h3>{{destination.city}}</h3>
           <ul>
-            <a href="{{destination.link}}">
+            <a ui-sref="home.results({ location: destination.city })">
               <img ng-src="{{destination.image}}" class="img-responsive"  width="400" height="400">
             </a>
           </ul>

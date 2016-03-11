@@ -13,11 +13,9 @@ var jwtCheck = jwt({
 
 app.set('port', (process.env.PORT || 5000));
 
+// View engine not needed for HTML
+// Use static middleware to serve out HTML
 app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 
 /* REST routes for User CRUD Service */
 //Activities
@@ -26,7 +24,7 @@ app.put("/api/activities/:id", jsonParser, database.updateActivity);
 app.delete("/api/activities/:activityID", database.deleteActivity);
 app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
 
-//Provdiers
+//Providers
 app.post("/api/partners", jsonParser, database.createProvider);
 app.put("/api/partners/:providerID", jsonParser, database.updateProvider);
 app.delete("/api/partners/:providerID", database.deleteProvider);
@@ -45,10 +43,8 @@ app.get("/api/test/partners", database.getAllProviderTst);
 
 /* Default Routing */
 app.get("/", function(request, response) {
-  response.render('pages/index');
+  response.sendfile('./public/index.html');
 });
-
-
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

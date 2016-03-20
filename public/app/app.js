@@ -1,6 +1,7 @@
 angular.module('mainApp', [
   'ui.router',
   'mainApp.login',
+  'mainApp.auth',
   'auth0'
 ])
 
@@ -23,6 +24,10 @@ angular.module('mainApp', [
           templateUrl: '../templates/home.html'
         },
 
+        'nav@home': {
+          templateUrl: '../partials/nav.html'
+        },
+
         'jumbotron@home': {
           templateUrl: '../partials/jumbotron.html'
         },
@@ -37,14 +42,6 @@ angular.module('mainApp', [
       url: '/location/:location',
       controller: 'GetLocationController',
       templateUrl: '../pages/activities-results.html'
-    })
-
-    .state('about', {
-      url: '/about',
-      templateUrl: '../pages/about.html',
-      data: {
-        requiresLogin: true
-      }
     });
 })
 

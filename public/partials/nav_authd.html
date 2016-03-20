@@ -8,10 +8,17 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="navbar-right">
-          <a ui-sref="login"><span class="glyphicon glyphicon-user"></span> Signup/Login</a>
+          <button type="button" ng-click="logout()" style="float: right;" class="btn btn-default navbar-btn">
+            Logout
+          </button>
         </li>
         <li class="navbar-right">
-          <a href="../partner"><span class="glyphicon glyphicon-book"></span> Become a Partner</a>
+          <p class="navbar-text">
+            <img style="height: 20px" ng-src="{{auth.profile.picture}}" />
+          </p>
+          <p class="navbar-text">
+            Signed in as {{auth.profile.name}}
+          </p>
         </li>
         <li class="navbar-right">
           <a ui-sref="auth.about"><span class="glyphicon glyphicon-star"></span> About</a>

@@ -9,6 +9,12 @@ angular.module('mainApp.login', [
       url: '/login',
       controller: 'LoginCtrl',
       templateUrl: '../app/login/login.html'
+    })
+
+    .state('logout', {
+      url: '/logout',
+      controller: 'LogoutCtrl',
+      templateUrl: '../app/login/logout.html'
     });
 })
 
@@ -18,8 +24,19 @@ angular.module('mainApp.login', [
     chrome: true,
     standalone: true
   }, function() {
-    $state.go('auth.home');
+    //$sate.go('auth.about')''
+    $state.go('auth.about');
   }, function(error) {
     console.log('There was an error', error);
   });
+})
+
+.controller('LogoutCtrl', function($scope, auth, $state) {
+  $scope.auth = auth;
+
+  $scope.logout = function() {
+    auth.signout();
+
+    $state.go('login');
+  }
 });

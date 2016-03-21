@@ -31,3 +31,7 @@
     border: 2px solid white; }
     .jumbotron .lang-logo img {
       max-width: 100%; }
+
+.form-control.search {
+  width: 250px;
+}

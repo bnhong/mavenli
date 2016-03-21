@@ -2,18 +2,7 @@ angular.module('mainApp.search', [
   'ui.router'
 ])
 
-.config(function($stateProvider) {
-  /*
-  $stateProvider
-    .state('search', {
-      url: '/location/:location',
-      controller: 'GetLocationController',
-      templateUrl: '../pages/activities-results.html'
-    });
-    */
-})
-
-.controller('searchFormCtrl', function($scope, $state, $http) {
+.controller('SearchFormCtrl', function($scope, $state, $http) {
   $scope.list = [];
 
   $scope.text;
@@ -37,22 +26,15 @@ angular.module('mainApp.search', [
     console.log("Searching...");
 
     if($scope.text) {
-      $state.go('activities', {
+      $state.go('activities.results', {
         location: $scope.text
       });
     }
 
     if($scope.city) {
-      $state.go('activities', {
+      $state.go('activities.results', {
         location: $scope.city
       });
     }
-
-    /*$state.go('activities', {
-      location: 'San Francisco'
-    });*/
   };
-
-
-
 });

@@ -1,10 +1,15 @@
 angular.module('mainApp', [
   'ui.router',
+  'auth0',
+
+  // Home App
   'mainApp.rsvp',
   'mainApp.search',
   'mainApp.login',
   'mainApp.auth',
-  'auth0'
+
+  // Activities App
+  'mainApp.activities'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, authProvider) {
@@ -23,7 +28,7 @@ angular.module('mainApp', [
       url: '',
       views: {
         '': {
-          templateUrl: '../templates/home.html'
+          templateUrl: '../app/home/views/home.html'
         },
 
         'nav@home': {
@@ -47,6 +52,21 @@ angular.module('mainApp', [
     })
 
     .state('activities', {
+      url: '/activities',
+      views: {
+        '': {
+          templateUrl: '/app/activities/views/activities.html'
+        },
+        'nav@activities': {
+          templateUrl: '/partials/nav.html'
+        },
+        'search@activities': {
+          templateUrl:'/app/activities/views/activities-search.html'
+        }
+      }
+    })
+
+    .state('activities.results', {
       url: '/activities/:location',
       controller: 'GetLocationController',
       templateUrl: '../pages/activities-results.html'

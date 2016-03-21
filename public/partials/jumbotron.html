@@ -10,27 +10,22 @@
   <div class="row search-bar" >
     <div class="col-xs-8 col-xs-offset-2">
 
-      <form class="form-inline" ng-controller="RsvpFormController" ng-submit="submit()">
+      <form class="form-inline" ng-controller="searchFormCtrl" ng-submit="submit()">
         <div class="form-group">
           <input type="search" class="form-control" id="search" placeholder="Where do you want to go?" ng-model="text">
         </div>
         <div class="form-group">
-          <input type="date" class="form-control" id="check-in" placeholder="Check In" ng-model="checkin">
-        </div>
-        <div class="form-group">
-          <input type="date" class="form-control" id="check-out" placeholder="Check Out" ng-model="checkout">
-        </div>
-        <div class="form-group">
-          <select class="form-control" ng-model="guests">
-            <option>1 Guest</option>
-            <option>2 Guests</option>
-            <option>3 Guests</option>
-            <option>4 Guests</option>
-            <option>5 Guests</option>
+          <select class="form-control" ng-model="city">
+            <option>San Francisco</option>
+            <option>Los Angeles</option>
+            <option>San Diego</option>
+            <option>Napa Valley</option>
+            <option>Las Vegas</option>
+            <option>New York</option>            
           </select>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" aria-describedby="sizing-addon1" type="submit">Go!</button>
+          <button class="btn btn-primary" ng-click="search()">Go!</button>
         </div>
       </form>
 

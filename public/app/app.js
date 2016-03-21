@@ -1,5 +1,7 @@
 angular.module('mainApp', [
   'ui.router',
+  'mainApp.rsvp',
+  'mainApp.search',
   'mainApp.login',
   'mainApp.auth',
   'auth0'
@@ -40,6 +42,12 @@ angular.module('mainApp', [
 
     .state('home.results', {
       url: '/location/:location',
+      controller: 'GetLocationController',
+      templateUrl: '../pages/activities-results.html'
+    })
+
+    .state('activities', {
+      url: '/activities/:location',
       controller: 'GetLocationController',
       templateUrl: '../pages/activities-results.html'
     });

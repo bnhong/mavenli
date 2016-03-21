@@ -1,4 +1,4 @@
-angular.module('mainApp')
+angular.module('mainApp.rsvp', [])
 
 .controller('RsvpFormController', ['$scope', '$http', function($scope, $http) {
     $scope.list = [];

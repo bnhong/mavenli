@@ -25,12 +25,6 @@ angular.module('mainApp.search', [
   $scope.search = function() {
     console.log("Searching...");
 
-    if($scope.text) {
-      $state.go('activities.results', {
-        location: $scope.text
-      });
-    }
-
     if($scope.city) {
       $state.go('activities.results', {
         location: $scope.city

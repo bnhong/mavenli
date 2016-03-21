@@ -36,13 +36,13 @@ angular.module('mainApp.activities', [
     console.log("Searching...");
 
     if($scope.text) {
-      $state.go('activities', {
+      $state.go('activities.results', {
         location: $scope.text
       });
     }
 
     if($scope.city) {
-      $state.go('activities', {
+      $state.go('activities.results', {
         location: $scope.city
       });
     }

@@ -31,7 +31,7 @@ app.delete("/api/partners/:providerID", database.deleteProvider);
 app.get("/api/partners/:providerID", database.getProvider);
 
 //Reservations
-app.post("/api/reservations", database.createReservation);
+app.post("/api/reservations", jsonParser, database.createReservation);
 app.put("/api/reservations/:reservationID", jsonParser, database.updateReservation);
 app.delete("/api/reservations/:reservationID", database.deleteReservation);
 app.get("/api/reservations/:reservationID", database.getReservation);

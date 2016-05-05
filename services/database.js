@@ -228,14 +228,15 @@ exports.getAllProviderTst = function(req, res)
 // Reservations
 exports.createReservation = function(req, res)
 {
-  var reservation = new ReservationDB(req.body);
+  console.log("Hello");
+  var reservation = new ReservationsDB(req.body);
   reservation.save();
   res.json(req.body);
 };
 
 exports.updateReservation = function(req, res)
 {
-    ReservationDB.findByIdAndUpdate(req.params.reservationId,
+    ReservationsDB.findByIdAndUpdate(req.params.reservationId,
     {
         $set:
         {
@@ -260,7 +261,7 @@ exports.updateReservation = function(req, res)
 
 exports.deleteReservation = function(req, res)
 {
-  ReservationDB.remove({reservationID: req.params.reservationId}, function(err)
+  ReservationsDB.remove({reservationID: req.params.reservationId}, function(err)
   {
       res.json(true);
   });

@@ -261,7 +261,7 @@ exports.updateReservation = function(req, res)
 
 exports.deleteReservation = function(req, res)
 {
-  ReservationsDB.remove({reservationID: req.params.reservationId}, function(err)
+  ReservationsDB.remove({reservationID: req.params.reservationID}, function(err)
   {
       res.json(true);
   });
@@ -269,7 +269,7 @@ exports.deleteReservation = function(req, res)
 
 exports.getReservation = function(req, res)
 {
-  ActivitiesDB.find({ reservationID: req.params.reservationID }, function(err, obj)
+  ReservationsDB.find({ reservationID: req.params.reservationID }, function(err, obj)
   {
     res.json(obj);
   });

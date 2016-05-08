@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+        <h3>Results for {{location}}</h3>
+        <p>Book an activity today!</p>
+        <tr>
+          <td>Activity ID</td>
+          <td>Provider</td>
+          <td>Location</td>
+          <td>Title</td>
+          <td>Price</td>
+        </tr>
+        <tr ng-repeat="destination in destinations | orderBy: 'activityID'">
+          <td>{{destination.activityID}}</td>
+          <td>{{destination.providerID}}</td>
+          <td>{{destination.location}}</td>
+          <td>{{destination.title}}</td>
+          <td>{{destination.price}}</td>
+          <td>
+            <a class="btn btn-primary" ng-click="goToRsvp(destination.activityID)">Go</a>
+          </td>
+          <td>
+            <a ui-sref="home">Link</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

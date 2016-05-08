@@ -7,8 +7,15 @@ angular.module('mainApp.login', [
   $stateProvider
     .state('login', {
       url: '/login',
-      controller: 'LoginCtrl',
-      templateUrl: '../app/login/login.html'
+      views: {
+        '': {
+          templateUrl: '../app/login/login.html',
+          controller: 'LoginCtrl'
+        },
+        'nav@login': {
+          templateUrl: '/partials/nav.html'
+        }
+      }
     })
 
     .state('logout', {
@@ -18,17 +25,35 @@ angular.module('mainApp.login', [
     });
 })
 
-.controller('LoginCtrl', function(auth, $state) {
+.controller('LoginCtrl', function($scope, auth, $state) {
+  /* Used by auth0 redirect
   auth.signin({
     popup: true,
     chrome: true,
     standalone: true
   }, function() {
-    //$sate.go('auth.about')''
+    //$state.go('auth.about')''
     $state.go('auth.about');
   }, function(error) {
     console.log('There was an error', error);
   });
+   */
+
+  // Used by auth0 redirect.
+  $scope.login = function() {
+    auth.signin({
+      connection: 'Username-Password-Authentication',
+      email: $scope.email,
+      password: $scope.password
+    });
+  }
+
+  $scope.loginWithFacebook = function() {
+    auth.signin({
+      connection: 'facebook'
+    });
+  }
+
 })
 
 .controller('LogoutCtrl', function($scope, auth, $state) {

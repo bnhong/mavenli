@@ -5,11 +5,14 @@ angular.module('mainApp', [
   // Home App
   'mainApp.rsvp',
   'mainApp.search',
-  'mainApp.login',
-  'mainApp.auth',
+  'mainApp.location',
 
   // Activities App
-  'mainApp.activities'
+  'mainApp.activities',
+
+  // Login App
+  'mainApp.login',
+  'mainApp.auth'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, authProvider) {
@@ -47,30 +50,19 @@ angular.module('mainApp', [
 
     .state('home.results', {
       url: '/location/:location',
-      controller: 'GetLocationController',
-      templateUrl: '../pages/activities-results.html'
-    })
-
-    .state('activities', {
-      url: '/activities',
-      views: {
-        '': {
-          templateUrl: '/app/activities/views/activities.html'
-        },
-        'nav@activities': {
-          templateUrl: '/partials/nav.html'
-        },
-        'search@activities': {
-          templateUrl:'/app/activities/views/activities-search.html'
-        }
-      }
-    })
-
-    .state('activities.results', {
-      url: '/activities/:location',
-      controller: 'GetLocationController',
-      templateUrl: '../pages/activities-results.html'
+      controller: 'GetLocationCtrl',
+      templateUrl: '/app/activities/views/activities-results.html'
     });
+
+    // Used by auth0 redirect mode
+    authProvider.on('loginSuccess', function($state) {
+      $state.go('auth.about');
+    });
+
+    authProvider.on('loginFailure', function(error) {
+      console.log("Error loggin in", error);
+    });
+
 })
 
 .run(function(auth) {

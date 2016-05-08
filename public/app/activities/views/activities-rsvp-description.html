@@ -1,0 +1,46 @@
+<p>Description</p>
+<a ui-sref="home">Link</a>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1>{{currentActivity.title}}</h1>
+    <p>{{currentActivity.providerID}}</p>
+    <p>${{currentActivity.price}}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <p>{{currentActivity.description}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <form>
+      <div class="form-group row">
+        <label for="check-in2" class="col-sm-2 form-control-label">Date</label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="check-in2" ng-model="checkin" placeholder="Check In">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="name2" class="col-sm-2 form-control-label">Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="name2" ng-model="name" placeholder="Bunreth Nhong">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email2" class="col-sm-2 form-control-label">Email</label>
+        <div class="col-sm-4">
+          <input type="email" class="form-control" id="email2" ng-model="email" placeholder="abc@mavenli.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-default" ng-click="createRsvp(currentActivity.activityID)">RSVP!</button>
+        </div>
+        <div class="col-sm-2">
+          <button type="delete" class="btn btn-default" ng-click="deleteRsvp()">Delete!</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

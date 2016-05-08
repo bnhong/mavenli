@@ -1,6 +1,6 @@
 angular.module('mainApp.rsvp', [])
 
-.controller('RsvpFormController', ['$scope', '$http', function($scope, $http) {
+.controller('RsvpFormController', function($scope, $http) {
     $scope.list = [];
     $scope.rsvpList = [];
 
@@ -48,4 +48,4 @@ angular.module('mainApp.rsvp', [])
       $scope.checkout = '';
       $scope.guests = '';
     };
-}]);
+});

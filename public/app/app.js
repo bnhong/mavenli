@@ -49,7 +49,7 @@ angular.module('mainApp', [
     })
 
     .state('home.results', {
-      url: '/location/:location',
+      url: '/activities/location/:location',
       controller: 'GetLocationCtrl',
       templateUrl: '/app/activities/views/activities-results.html'
     });

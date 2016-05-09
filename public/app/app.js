@@ -3,9 +3,8 @@ angular.module('mainApp', [
   'auth0',
 
   // Home App
-  'mainApp.rsvp',
   'mainApp.search',
-  'mainApp.location',
+  'mainApp.getLocation',
 
   // Activities App
   'mainApp.activities',
@@ -39,6 +38,7 @@ angular.module('mainApp', [
         },
 
         'jumbotron@home': {
+          controller: 'SearchFormCtrl',
           templateUrl: '../partials/jumbotron.html'
         },
 

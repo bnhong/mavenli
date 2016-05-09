@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-xs-8">
       <table class="table">
         <h3>Results for {{location}}</h3>
         <p>Book an activity today!</p>
@@ -11,7 +11,7 @@
           <td>Title</td>
           <td>Price</td>
         </tr>
-        <tr ng-repeat="destination in destinations | orderBy: 'activityID'">
+        <tr ng-repeat="destination in destinations | orderBy: 'activityID' | filter: searchActivity">
           <td>{{destination.activityID}}</td>
           <td>{{destination.providerID}}</td>
           <td>{{destination.location}}</td>
@@ -19,9 +19,6 @@
           <td>{{destination.price}}</td>
           <td>
             <a class="btn btn-primary" ng-click="goToRsvp(destination.activityID)">Go</a>
-          </td>
-          <td>
-            <a ui-sref="home">Link</a>
           </td>
         </tr>
       </table>

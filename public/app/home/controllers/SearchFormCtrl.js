@@ -3,31 +3,30 @@ angular.module('mainApp.search', [
 ])
 
 .controller('SearchFormCtrl', function($scope, $state, $http) {
-  $scope.list = [];
+  $scope.sortType = '';
+  $scope.sortReverse = false;
+  $scope.searchActivity = this.searchActivity;
 
-  $scope.text;
-  $scope.city;
+  $scope.searchByLocation = function() {
+    if(this.city) {
+      console.log("Searching for activities in " + this.city + "...");
 
-  $scope.submit = function() {
-    if($scope.city) {
-      $scope.list.push(this.city);
-      $scope.city = '';
+      $state.go('activities.results', {
+        location: this.city,
+        filterBy: ""
+      });
     }
-
-    if($scope.text) {
-      $scope.list.push(this.text);
-      $scope.text = '';
-    }
-
-    console.log($scope.list);
   };
 
-  $scope.search = function() {
-    console.log("Searching...");
+  $scope.searchByActivity = function() {
 
-    if($scope.city) {
+
+    if(this.searchActivity && this.city) {
+      console.log("Searching for '" + this.searchActivity + "' in " + this.city + "...");
+
       $state.go('activities.results', {
-        location: $scope.city
+        location: this.city,
+        filterBy: this.searchActivity
       });
     }
   };

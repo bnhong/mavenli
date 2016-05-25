@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <table class="table">
+        <h3>View Provider {{provider.name}}</h3>
+        <p>Info</p>
+        <tr>
+          <td>Provider ID</td>
+          <td>Name</td>
+          <td>Address</td>
+          <td>Phone Number</td>
+          <td>Email</td>
+          <td>Currently Working</td>
+          <td>Rating</td>
+          <td>Reviews List</td>
+          <td>Past Acitivities List</td>
+        </tr>
+        <tr>
+          <td>{{provider.providerID}}</td>
+          <td>{{provider.name}}</td>
+          <td>{{provider.address}}</td>
+          <td>{{provider.phoneNumber}}</td>
+          <td>{{provider.email}}</td>
+          <td>{{provider.currentlyWorking}}</td>
+          <td>{{provider.rating}}</td>
+          <td>{{provider.reviewsList}}</td>
+          <td>{{provider.pastAcitivitiesList}}</td>
+          <td>
+            <a class="btn btn-primary" ng-click="goToRsvp(destination.activityID)">Go</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

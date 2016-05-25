@@ -1,0 +1,37 @@
+<div ui-view="nav"></div>
+<h2>Sign Up</h2>
+<div class="jumbotron text-center">
+  <div class="container">
+    <p>Join as a Provider!</p>
+  </div>
+</div>
+  <div class="container">
+    <form ng-controller="CreateProviderCtrl">
+      <div class="form-group">
+        <label for="providerName">Name</label>
+        <input type="text" data-ng-model="provider.name" class="form-control" id="providerName" placeholder="Bob Derp">
+      </div>
+      <div class="form-group">
+        <label for="providerAddress">Address</label>
+        <input type="text" data-ng-model="provider.address" class="form-control" id="providerAddress" placeholder="Ex: 123 Main St">
+      </div>
+      <div class="form-group">
+        <label for="providerPhoneNumber">Phone Number</label>
+        <input type="text" data-ng-model="provider.phoneNumber" class="form-control" id="phoneNumber" placeholder="(xxx) - xxx - xxxx">
+      </div>
+      <div class="form-group">
+        <label for="providerEmail">Email</label>
+        <input type="email" data-ng-model="provider.email" class="form-control" id="providerEmail" placeholder="Ex: bob@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="providerBio">Bio</label>
+        <input type="text" data-ng-model="provider.bio" class="form-control" id="providerBio" placeholder="What is your story?">
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" data-ng-model="provider.password" class="form-control" id="loginPassword" placeholder="Password">
+      </div>
+      <input type="submit" class="btn btn-primary" value="Submit"  ng-click="createProvider()">
+    </form>
+  </div>
+<div ui-view></div>

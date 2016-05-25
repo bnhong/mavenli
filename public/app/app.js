@@ -9,6 +9,9 @@ angular.module('mainApp', [
   // Activities App
   'mainApp.activities',
 
+  // Providers App
+  'mainApp.providers',
+
   // Login App
   'mainApp.login',
   'mainApp.auth'

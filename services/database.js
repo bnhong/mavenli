@@ -40,7 +40,7 @@ var UserSchema =
   email               : String,
   bio                 : String,
   reservationList     : [],
-  reviewList         : [],
+  reviewList          : [],
   pricePrefence       : Number,
   adventurePrefence   : Number,
   pastActivitiesList  : [],
@@ -109,7 +109,8 @@ exports.deleteActivity = function(req, res)
 {
   ActivitiesDB.remove({activityID: req.params.activityID}, function(err)
   {
-      res.json(true);
+      var result = (!err) ? true : false;
+      res.json(result);
   });
 };
 
@@ -228,7 +229,6 @@ exports.getAllProviderTst = function(req, res)
 // Reservations
 exports.createReservation = function(req, res)
 {
-  console.log("Hello");
   var reservation = new ReservationsDB(req.body);
   reservation.save();
   res.json(req.body);

@@ -11,7 +11,6 @@
     "angular-ui-bootstrap": "*",
     "body-parser": "*",
     "bootstrap": "*",
-    "ejs": "2.3.3",
     "express": "4.13.3",
     "express-jwt": "^3.3.0",
     "express-session": "^1.13.0",

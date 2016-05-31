@@ -23,6 +23,7 @@ app.post("/api/activities", jsonParser, database.createActivity);
 app.put("/api/activities/:id", jsonParser, database.updateActivity);
 app.delete("/api/activities/:activityID", database.deleteActivity);
 app.get("/api/activities/location/:location", database.getAllActivitiesByLocation);
+app.get("/api/activities/:activityID", database.getActivity);
 
 //Providers
 app.post("/api/partners", jsonParser, database.createProvider);

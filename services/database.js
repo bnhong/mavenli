@@ -157,6 +157,14 @@ exports.getAllActivitiesByLocation = function(req, res)
   });
 };
 
+exports.getActivity = function(req, res)
+{
+  ActivitiesDB.find({ activityID: req.params.activityID }, function(err, obj)
+  {
+    res.json(obj);
+  });
+};
+
 exports.getAllActivitiesTst = function(req, res)
 {
   ActivitiesDB.find({}, function(err, obj)
